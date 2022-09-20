@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  background-image: linear-gradient(to bottom, red , yellow, red) !important;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top:20vh;
   }
-  to {
-    transform: rotate(360deg);
+  #title {
+    font-family: sans-serif;
+    font-size: 24px;
   }
-}
+  #drum-machine {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    width: 700px;
+    background-color: #d4c9c9;
+    border: 15px solid #ad6217;
+  }
+  
+  .drum-pad{
+    width: 6.5rem;
+    height: 5rem;
+    border-radius: 6%;
+    background-color: #808080;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    border: none;
+    box-shadow: 3px 3px 5px 1px #000;
+  }
+  .drum-pad:hover {
+    transform: scale(1.04);
+  }
+  
+  #pad-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 0 18px 2px 4px;
+  }
+  .switch{
+    transform: scale(0.95);
+  }
+  
+  /* The switch - the box around the slider */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: blue;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  #logo {
+    font-family: system-ui;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 92%;
+    float: right;
+  }
+  #display {
+    width: 14rem;
+    height: 2.8rem;
+    font-family: cursive;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #808080;
+  }
+  #controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.2rem;
+    margin-right: 1.5rem;
+    margin-left: 1.8rem;
+    gap: 1.5rem
+  }
+  .slider-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  #author{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+  }
+
+  @media (max-width: 800px) {
+    #container {
+      display: flex;
+      flex-flow:column;
+      align-items: center;
+      gap:20px;
+    }
+    #drum-machine {
+      width: 480px;
+    }
+    #pad-col {
+      margin: 20px 80px 2px 4px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #container {
+      display: flex;
+      flex-flow:column;
+      align-items: center;
+      justify-content: center;
+      gap:20px;
+    }
+    #drum-machine {
+      width: 280px;
+    }
+    .drum-pad{
+      width: 4rem;
+      height: 2.0rem;
+    }
+    #pad-col {
+    transform: scale(0.95);
+    padding-left: 40px;
+    margin: 10px 0px 2px -40px;
+    }
+    #option-col {
+      transform: scale(0.9);
+    }
+  }
