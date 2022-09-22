@@ -21,7 +21,8 @@ body {
     justify-self: center;
     width: 700px;
     background-color: #d4c9c9;
-    border: 15px solid #ad6217;
+    border: 10px solid #ad6217;
+    border-radius: 2%;
   }
   
   .drum-pad{
@@ -29,6 +30,7 @@ body {
     height: 5rem;
     border-radius: 6%;
     background-color: #808080;
+    color: white;
     font-family: sans-serif;
     font-weight: bold;
     font-size: 28px;
@@ -84,17 +86,13 @@ body {
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: blue;
+    background-color: red;
     -webkit-transition: .4s;
     transition: .4s;
   }
   
-  input:checked + .slider {
-    background-color: black;
-  }
-  
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #dd0808;
   }
   
   input:checked + .slider:before {
@@ -136,6 +134,32 @@ body {
     font-family: monospace;
     font-size: 18px;
     font-weight: bold;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    height: 8px;
+    width: 150px;
+    accent-color: red;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000;
+    background: black;
+    border-radius: 5px;
+    border: 1px solid #000000;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 30px;
+    width: 15px;
+    border-radius: 5px;
+    background: red;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -11px;
   }
   #author{
     display: flex;
